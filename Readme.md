@@ -97,3 +97,9 @@ types:-
    ```
    RENAME TABLE users to programmers;
    ```
+
+7. Alter Table
+
+   ```
+   ALTER TABLE users ADD COLUMN is_Active BOOLEAN DEFAULT true;
+   ```
