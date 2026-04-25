@@ -98,8 +98,22 @@ types:-
    RENAME TABLE users to programmers;
    ```
 
-7. Alter Table
+7. Alter Table (add column)
 
    ```
    ALTER TABLE users ADD COLUMN is_Active BOOLEAN DEFAULT true;
    ```
+
+8. Alter Table (delete column)
+
+   ```
+   ALTER TABLE users DROP COLUMN is_active
+   ```
+
+9. Alter Table (shift columns)
+
+   ```
+   ALTER TABLE users MODIFY COLUMN email VARCHAR(100) AFTER id;
+   ```
+
+10.
