@@ -66,54 +66,76 @@ types:-
    DROP DATABASE startersql;
    ```
 
-3. Create a table
+3. start using a database
 
    ```
-   CREATE TABLE users (
-   id INT AUTO_INCREMENT PRIMARY KEY,
-   name VARCHAR(100) NOT NULL,
-   email VARCHAR(100) UNIQUE NOT NULL,
-   gender ENUM('Male', 'Female', 'Other'),
-   date_of_birth DATE,
-   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-   );
-
+   USE startersql;
    ```
 
-4. Select data from table
+4. Create a table
+
+```
+CREATE TABLE users (
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+email VARCHAR(100) UNIQUE NOT NULL,
+gender ENUM('Male', 'Female', 'Other'),
+date_of_birth DATE,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+```
+
+5. Select data from table
 
    ```
    SELECT * FROM users;
    ```
 
-5. Select specific columns
+6. Select specific columns
 
    ```
    select name, email from users;
    ```
 
-6. Renaming a table
+7. Renaming a table
 
    ```
    RENAME TABLE users to programmers;
    ```
 
-7. Alter Table (add column)
+8. Alter Table (add column)
 
    ```
    ALTER TABLE users ADD COLUMN is_Active BOOLEAN DEFAULT true;
    ```
 
-8. Alter Table (delete column)
+9. Alter Table (delete column)
 
    ```
    ALTER TABLE users DROP COLUMN is_active
    ```
 
-9. Alter Table (shift columns)
+10. Alter Table (shift columns)
+
+    ```
+    ALTER TABLE users MODIFY COLUMN email VARCHAR(100) AFTER id;
+    ALTER TABLE users MODIFY COLUMN date_of_birth DATE FIRST;
+    ```
+
+# CRUD
+
+1. Adding Data in table
 
    ```
-   ALTER TABLE users MODIFY COLUMN email VARCHAR(100) AFTER id;
+   INSERT INTO users VALUES
+   (DEFAULT, "Nipun", "nipun.rawat@gmail.com", "Male", "2000-08-08", DEFAULT);
    ```
 
-10.
+   ```
+   INSERT INTO users (name, email, date_of_birth) VALUES
+   ("Sonia", "sonia.sharma@gmail.com", "2000-03-07"),
+   ("ram", "ram.sharma@gmail.com", "2000-05-07");
+   ```
+
+2.
