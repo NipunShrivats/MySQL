@@ -86,56 +86,57 @@ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 ```
 
-5. Select data from table
+5.  Select data from table
 
-   ```
-   SELECT * FROM users;
-   ```
+    ```
+    SELECT * FROM users;
+    ```
 
-6. Select specific columns
+6.  Select specific columns
 
-   ```
-   select name, email from users;
-   ```
+    ```
+    select name, email from users;
+    ```
 
-7. Renaming a table
+7.  Renaming a table
 
-   ```
-   RENAME TABLE users to programmers;
-   ```
+    ```
+    RENAME TABLE users to programmers;
+    ```
 
-8. Alter Table (add column)
+8.  Alter Table (add column)
 
-   ```
-   ALTER TABLE users ADD COLUMN is_Active BOOLEAN DEFAULT true;
-   ```
+    ```
+    ALTER TABLE users ADD COLUMN is_Active BOOLEAN DEFAULT true;
+    ```
 
-9. Alter Table (delete column)
+9.  Alter Table (delete column)
 
-   ```
-   ALTER TABLE users DROP COLUMN is_active
-   ```
+    ```
+    ALTER TABLE users DROP COLUMN is_active
+    ```
 
 10. Alter Table (shift columns)
 
-    ```
-    ALTER TABLE users MODIFY COLUMN email VARCHAR(100) AFTER id;
-    ALTER TABLE users MODIFY COLUMN date_of_birth DATE FIRST;
-    ```
+```
+a. ALTER TABLE users MODIFY COLUMN email VARCHAR(100) AFTER id;
+
+b. ALTER TABLE users MODIFY COLUMN date_of_birth DATE FIRST;
+
+c. ALTER TABLE users
+   MODIFY COLUMN gender ENUM("Male", "Female", "Other") NOT NULL;
+```
 
 # CRUD
 
 1. Adding Data in table
 
-   ```
-   INSERT INTO users VALUES
-   (DEFAULT, "Nipun", "nipun.rawat@gmail.com", "Male", "2000-08-08", DEFAULT);
-   ```
+a.
+`INSERT INTO users VALUES
+(DEFAULT, "Nipun", "nipun.rawat@gmail.com", "Male", "2000-08-08", DEFAULT);`
 
-   ```
-   INSERT INTO users (name, email, date_of_birth) VALUES
-   ("Sonia", "sonia.sharma@gmail.com", "2000-03-07"),
-   ("ram", "ram.sharma@gmail.com", "2000-05-07");
-   ```
+b. INSERT INTO users (name, email, date_of_birth) VALUES
+("Sonia", "sonia.sharma@gmail.com", "2000-03-07"),
+("ram", "ram.sharma@gmail.com", "2000-05-07");
 
 2.
