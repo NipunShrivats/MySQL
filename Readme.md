@@ -129,6 +129,9 @@ c. ALTER TABLE users
 d. ALTER TABLE employees
     ADD COLUMN age INT;
 
+    UPDATE employees
+    SET age = TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE());
+
 ```
 
 # CRUD
