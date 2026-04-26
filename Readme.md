@@ -95,7 +95,7 @@ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 6.  Select specific columns
 
     ```
-    select name, email from users;
+    select name, email FROM users;
     ```
 
 7.  Renaming a table
@@ -125,18 +125,33 @@ b. ALTER TABLE users MODIFY COLUMN date_of_birth DATE FIRST;
 
 c. ALTER TABLE users
    MODIFY COLUMN gender ENUM("Male", "Female", "Other") NOT NULL;
+
+d. ALTER TABLE employees
+    ADD COLUMN age INT;
+
 ```
 
 # CRUD
 
 1. Adding Data in table
 
-a.
-`INSERT INTO users VALUES
-(DEFAULT, "Nipun", "nipun.rawat@gmail.com", "Male", "2000-08-08", DEFAULT);`
+a. INSERT INTO users VALUES
+(DEFAULT, "Nipun", "nipun.rawat@gmail.com", "Male", "2000-08-08", DEFAULT);
 
 b. INSERT INTO users (name, email, date_of_birth) VALUES
 ("Sonia", "sonia.sharma@gmail.com", "2000-03-07"),
 ("ram", "ram.sharma@gmail.com", "2000-05-07");
 
-2.
+2. Using the inserted Data.
+
+a. SELECT name, email, gender FROM users WHERE gender="Other"; // equal to Other
+b. SELECT name, email, gender FROM users WHERE gender<>"Other"; // Not equal to Other(!=)
+c. SELECT name, gender, date_of_birth FROM users WHERE date_of_birth < "2000-01-01";
+d. SELECT name, gender, date_of_birth FROM users WHERE date_of_birth BETWEEN "2000-01-01" AND "2026-12-31";
+e. `SELECT * FROM users WHERE gender in ("MALE", "FEMALE");`
+f. SELECT name, gender, department, salary FROM employees WHERE gender = "Male" AND salary > 50000;
+g. select name, gender, department, salary from employees where gender != "Other" and salary > 50000 ORDER BY salary DESC;
+h. select name, gender, department, salary from employees where gender != "Other" and salary > 50000 ORDER BY salary DESC LIMIT 5;
+i.
+j.
+k.

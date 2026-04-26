@@ -1,5 +1,14 @@
 use startersql;
 
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    gender ENUM('Male', 'Female', 'Other'),
+    date_of_birth DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 INSERT INTO users (name, email, gender, date_of_birth) VALUES
 ("Ramu", "ramu.sharma@gmail.com", "Male", "2000-03-03"),
 ("Suman", "suman.kapoor@gmail.com", "Female", "1999-07-15"),
