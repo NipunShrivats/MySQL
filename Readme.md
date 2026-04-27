@@ -145,7 +145,7 @@ b. INSERT INTO users (name, email, date_of_birth) VALUES
 ("Sonia", "sonia.sharma@gmail.com", "2000-03-07"),
 ("ram", "ram.sharma@gmail.com", "2000-05-07");
 
-2. Using the inserted Data.
+1.1. Using the inserted Data.
 
 a. SELECT name, email, gender FROM users WHERE gender="Other"; // equal to Other
 b. SELECT name, email, gender FROM users WHERE gender<>"Other"; // Not equal to Other(!=)
@@ -153,8 +153,15 @@ c. SELECT name, gender, date_of_birth FROM users WHERE date_of_birth < "2000-01-
 d. SELECT name, gender, date_of_birth FROM users WHERE date_of_birth BETWEEN "2000-01-01" AND "2026-12-31";
 e. `SELECT * FROM users WHERE gender in ("MALE", "FEMALE");`
 f. SELECT name, gender, department, salary FROM employees WHERE gender = "Male" AND salary > 50000;
-g. select name, gender, department, salary from employees where gender != "Other" and salary > 50000 ORDER BY salary DESC;
-h. select name, gender, department, salary from employees where gender != "Other" and salary > 50000 ORDER BY salary DESC LIMIT 5;
-i.
-j.
-k.
+g. SELECT name, gender, department, salary from employees where gender != "Other" and salary > 50000 ORDER BY salary DESC;
+h. SELECT name, gender, department, salary from employees where gender != "Other" and salary > 50000 ORDER BY salary DESC LIMIT 5;
+
+2. Update Data in table.
+
+```
+SET SQL_SAFE_UPDATES = 0; enable safe updates.
+```
+
+a. UPDATE employees SET salary = 77000 WHERE salary < 50000;
+b. UPDATE employees SET email = "meena.iyer@gmail.com" WHERE id=9;
+c. UPDATE employees SET email = "suresh.patel@gmail.com", salary = 100000 WHERE id=10;
